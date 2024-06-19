@@ -10,7 +10,7 @@ final class ProductViewModel{
     var products : [Product] = []
     var eventHandler : ((_ event : Event)->Void)?
     func fetchProducts(){
-        self.eventHandler!(.loading)
+       // self.eventHandler!(.loading)
         APIManager.shared.fetchProducts { response in
             self.eventHandler!(.stopLoading)
             switch response{
@@ -24,7 +24,6 @@ final class ProductViewModel{
         }
     }
 }
-
 
 extension ProductViewModel{
     enum Event{
